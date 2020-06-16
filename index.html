@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	function calculaLapso(tsInicio, tsFin) {
+	  return tsFin - tsInicio;
+	}
+
+	function setInnerH(obj) {
+	  document.getElementById(obj).innerHTML = new Date().getTime(); 
+	}
+
+	function setAmountInInnerH(obj, str) {
+	  document.getElementById(obj).innerHTML = str; 
+	}
+
+	function displayTimeStamp() {
+	  return new Date().getTime();
+	}
+
+	function setTodosInners(obj, obj2, obj3) {
+		str = new Date().getTime(); 
+		setAmountInInnerH(obj, str); 
+		setAmountInInnerH(obj2, str); 
+		setAmountInInnerH(obj3, str); 
+	}
+</script>
+
+
+<h2>My First JavaScript</h2>
+
+
+<p id="demo">DEMO</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = new Date().getTime()">
+Click me to display 'getTime()'
+</button>
+<hr>
+
+
+<p id="demo2">DEMO2</p>
+<script>
+var d = new Date().getTime();
+document.getElementById("demo2").innerHTML = d;
+</script>
+<hr>
+
+
+<p id="MiTS">MiTS: </p>
+<button type="button"
+onclick="document.getElementById('MiTS').innerHTML = displayTimeStamp()">
+Click me to display a TS
+</button>
+<hr>
+
+
+<p id="MiTS2">MiTS2: </p>
+<button type="button"
+onclick="document.getElementById('MiTS2').innerHTML = calculaLapso(document.getElementById('demo2').innerHTML, document.getElementById('MiTS').innerHTML)">
+Diff to MiTS2
+</button>
+<hr>
+
+<p id="demo3">Esto es DEMO3</p>
+<button type="button"
+onclick="setTodosInners('demo','MiTS','demo3')">
+Click cambia TODOS
+</button>
+<hr>
+
+
+</body>
+</html>
